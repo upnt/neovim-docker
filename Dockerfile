@@ -6,10 +6,9 @@ ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8
 
 RUN apk update && \
-    apk add --no-cache build-base && \
     apk add --no-cache --virtual .builddeps \
-            cmake automake autoconf libtool \
-            pkgconf coreutils curl unzip \
+            build-base cmake automake autoconf \
+            libtool pkgconf coreutils curl unzip \
             gettext-tiny-dev git && \
     git clone https://github.com/neovim/neovim.git && \
     cd neovim && \
@@ -18,4 +17,5 @@ RUN apk update && \
     make install && \
     cd ../ && \
     rm -rf neovim && \
-    apk del --purge .builddeps
+    apk del --purge .builddeps && \
+    apk add libgcc
