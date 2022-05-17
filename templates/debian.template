@@ -1,16 +1,16 @@
-FROM <base-image> AS builder
+FROM debian:buster-slim AS builder
 LABEL maintainer="upnt <upnt.github@gmail.com>" \
       version="<version>"
-RUN <install: build-base cmake automake autoconf \
-              libtool pkgconf coreutils curl unzip \
-              gettext-tiny-dev git > \
+RUN apt install -y \
+    ninja-build ninja-build gettext libtool libtool-bin \
+    autoconf automake cmake g++ pkg-config \
+    unzip curl doxygen \
  && git clone --depth 1 -b <version> https://github.com/neovim/neovim.git \
  && cd neovim \
  && make CMAKE_BUILD_TYPE=<build-type> \
  && make install
 
-FROM <base-image>
-RUN <install: libgcc>
+FROM debian:buster-slim
 WORKDIR /root/
 COPY --from=builder /usr/local/bin/ /usr/local/bin
 COPY --from=builder /usr/local/lib/ /usr/local/lib
