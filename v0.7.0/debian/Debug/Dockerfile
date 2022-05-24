@@ -15,9 +15,6 @@ FROM debian:buster-slim
 RUN apt-get update \
  && apt-get install -y locales \
  && locale-gen en_US.UTF-8
-ENV LANG=en_US.UTF-8 \
-    LC_ALL=en_US.UTF-8 \
-    LC_CTYPE=en_US.UTF-8
 WORKDIR /root/
 COPY --from=builder /usr/local /usr/local
 CMD nvim
