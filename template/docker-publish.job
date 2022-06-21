@@ -1,4 +1,4 @@
-  {version}:
+  {version_str}:
     needs: login
     runs-on: ubuntu-latest
     permissions:
@@ -30,7 +30,7 @@
           tags: ${{{{ steps.meta.outputs.tags }}}}
           labels: ${{{{ steps.meta.outputs.labels }}}}
 
-  {version}-debug:
+  {version_str}-debug:
     needs: login
     runs-on: ubuntu-latest
     permissions:
@@ -62,7 +62,7 @@
           tags: ${{{{ steps.meta.outputs.tags }}}}
           labels: ${{{{ steps.meta.outputs.labels }}}}
 
-  {version}-release:
+  {version_str}-release:
     needs: login
     runs-on: ubuntu-latest
     permissions:

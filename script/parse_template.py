@@ -57,7 +57,7 @@ def parse_workflows(versions):
                 job,
                 root_path / '.github' / 'workflows' / (os + '.yml'),
                 mode='a',
-                os=os, version=version
+                os=os, version=version, version_str=version.replace('.', '_')
             )
 
 if __name__=='__main__':
