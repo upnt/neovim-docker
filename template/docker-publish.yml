@@ -1,4 +1,4 @@
-name: {version}
+name: {os}
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -21,7 +21,7 @@ env:
 
 
 jobs:
-  alpine:
+  login:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -48,42 +48,3 @@ jobs:
           registry: ${{{{ env.REGISTRY }}}}
           username: ${{{{ github.actor }}}}
           password: ${{{{ secrets.GITHUB_TOKEN }}}}
-
-      # Extract metadata (tags, labels) for Docker
-      # https://github.com/docker/metadata-action
-      - name: Extract Docker metadata
-        id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-        with:
-          images: ${{{{ env.REGISTRY }}}}/${{{{ env.IMAGE_NAME }}}}
-          tags: |
-            type=semver, pattern={version}-alpine
-
-      # Build and push Docker image with Buildx (don't push on PR)
-      # https://github.com/docker/build-push-action
-      - name: Build and push Docker image for debug
-        id: build-and-push-debug
-        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
-        with:
-          context: ./docker/{version}/alpine/Debug
-          push: ${{{{ github.event_name != 'pull_request' }}}}
-          tags: ghcr.io/upnt/neovim-docker:{version}-alpine-debug
-          labels: ${{{{ steps.meta.outputs.labels }}}}
-
-      - name: Build and push Docker image for release
-        id: build-and-push-release
-        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
-        with:
-          context: ./docker/{version}/alpine/Release
-          push: ${{{{ github.event_name != 'pull_request' }}}}
-          tags: {version}-alpine-release
-          labels: ${{{{ steps.meta.outputs.labels }}}}
-          
-      - name: Build and push Docker image
-        id: build-and-push
-        uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
-        with:
-          context: ./docker/{version}/alpine/RelWithDebInfo
-          push: ${{{{ github.event_name != 'pull_request' }}}}
-          tags: ${{{{ steps.meta.outputs.tags }}}}
-          labels: ${{{{ steps.meta.outputs.labels }}}}

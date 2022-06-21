@@ -15,8 +15,7 @@ def to_list(version_dict):
     return versions
 
 
-def parse_template(src_path, dst_path, isForce=False, **kwargs):
-    mode = 'w' if isForce else 'x'
+def parse_template(src_path, dst_path, mode='x', **kwargs):
     with open(src_path) as src, open(dst_path, mode=mode) as dst:
         for src_line in src:
             dst.write(src_line.format(**kwargs))
@@ -36,7 +35,7 @@ def parse_dockerfiles(versions, build_types):
         parse_template(
                 root_path / 'template' / (model + '.template'),
                 docker_dir / 'Dockerfile',
-                isForce=True,
+                mode='w',
                 version=version, build_type=build_type
         )
 
@@ -44,14 +43,22 @@ def parse_dockerfiles(versions, build_types):
 def parse_workflows(versions):
     root_path = Path('..')
     template = (root_path / 'template' / 'docker-publish.yml')
+    job = (root_path / 'template' / 'docker-publish.job')
 
-    version = 'stable'
-    parse_template(
+    for os in ['alpine', 'buster-slim']:
+        parse_template(
                 template,
-                root_path / '.github' / 'workflows' / (version + '.yml'),
-                isForce=True,
-                version=version
-    )
+                root_path / '.github' / 'workflows' / (os + '.yml'),
+                mode='w',
+                os=os
+        )
+        for version in versions:
+            parse_template(
+                job,
+                root_path / '.github' / 'workflows' / (os + '.yml'),
+                mode='a',
+                os=os, version=version
+            )
 
 if __name__=='__main__':
     build_types = ['Release', 'Debug', 'RelWithDebInfo']
