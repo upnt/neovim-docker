@@ -45,13 +45,13 @@ def parse_workflows(versions):
     root_path = Path('..')
     template = (root_path / 'template' / 'docker-publish.yml')
 
-    for version in versions:
-        parse_template(
+    version = 'stable'
+    parse_template(
                 template,
                 root_path / '.github' / 'workflows' / (version + '.yml'),
                 isForce=True,
                 version=version
-        )
+    )
 
 if __name__=='__main__':
     build_types = ['Release', 'Debug', 'RelWithDebInfo']
