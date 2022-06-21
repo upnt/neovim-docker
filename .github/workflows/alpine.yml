@@ -6,6 +6,8 @@ name: alpine
 # documentation.
 
 on:
+  schedule:
+    - cron: '0 6 * * *'
   push:
     branches: [ "main" ]
   pull_request:
@@ -20,7 +22,6 @@ env:
 
 jobs:
   v0_1_0:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -50,7 +51,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_0-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -80,7 +80,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_0-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -109,7 +108,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.1.0-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_1_1:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -139,7 +137,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_1-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -169,7 +166,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_1-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -198,7 +194,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.1.1-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_1_2:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -228,7 +223,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_2-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -258,7 +252,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_2-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -287,7 +280,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.1.2-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_1_3:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -317,7 +309,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_3-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -347,7 +338,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_3-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -376,7 +366,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.1.3-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_1_4:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -406,7 +395,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_4-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -436,7 +424,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_4-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -465,7 +452,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.1.4-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_1_5:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -495,7 +481,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_5-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -525,7 +510,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_5-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -554,7 +538,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.1.5-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_1_6:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -584,7 +567,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_6-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -614,7 +596,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_6-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -643,7 +624,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.1.6-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_1_7:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -673,7 +653,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_7-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -703,7 +682,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_1_7-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -732,7 +710,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.1.7-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_2_0:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -762,7 +739,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_2_0-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -792,7 +768,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_2_0-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -821,7 +796,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.2.0-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_2_1:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -851,7 +825,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_2_1-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -881,7 +854,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_2_1-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -910,7 +882,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.2.1-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_2_2:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -940,7 +911,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_2_2-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -970,7 +940,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_2_2-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -999,7 +968,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.2.2-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_0:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1029,7 +997,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_0-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1059,7 +1026,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_0-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1088,7 +1054,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.0-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_1:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1118,7 +1083,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_1-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1148,7 +1112,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_1-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1177,7 +1140,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.1-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_2:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1207,7 +1169,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_2-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1237,7 +1198,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_2-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1266,7 +1226,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.2-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_3:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1296,7 +1255,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_3-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1326,7 +1284,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_3-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1355,7 +1312,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.3-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_4:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1385,7 +1341,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_4-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1415,7 +1370,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_4-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1444,7 +1398,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.4-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_5:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1474,7 +1427,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_5-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1504,7 +1456,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_5-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1533,7 +1484,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.5-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_6:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1563,7 +1513,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_6-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1593,7 +1542,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_6-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1622,7 +1570,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.6-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_7:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1652,7 +1599,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_7-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1682,7 +1628,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_7-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1711,7 +1656,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.7-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_3_8:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1741,7 +1685,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_8-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1771,7 +1714,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_3_8-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1800,7 +1742,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.3.8-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_4_0:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1830,7 +1771,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_0-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1860,7 +1800,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_0-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1889,7 +1828,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.4.0-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_4_1:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1919,7 +1857,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_1-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1949,7 +1886,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_1-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -1978,7 +1914,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.4.1-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_4_2:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2008,7 +1943,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_2-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2038,7 +1972,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_2-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2067,7 +2000,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.4.2-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_4_3:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2097,7 +2029,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_3-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2127,7 +2058,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_3-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2156,7 +2086,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.4.3-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_4_4:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2186,7 +2115,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_4-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2216,7 +2144,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_4_4-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2245,7 +2172,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.4.4-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_5_0:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2275,7 +2201,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_5_0-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2305,7 +2230,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_5_0-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2334,7 +2258,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.5.0-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_5_1:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2364,7 +2287,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_5_1-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2394,7 +2316,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_5_1-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2423,7 +2344,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.5.1-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_6_0:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2453,7 +2373,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_6_0-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2483,7 +2402,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_6_0-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2512,7 +2430,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.6.0-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_6_1:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2542,7 +2459,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_6_1-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2572,7 +2488,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_6_1-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2601,7 +2516,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.6.1-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   v0_7_0:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2631,7 +2545,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_7_0-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2661,7 +2574,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   v0_7_0-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2690,7 +2602,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:v0.7.0-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   stable:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2720,7 +2631,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   stable-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2750,7 +2660,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   stable-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2779,7 +2688,6 @@ jobs:
           tags: ghcr.io/upnt/neovim-docker:stable-alpine-release
           labels: ${{ steps.meta.outputs.labels }}
   nightly:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2809,7 +2717,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   nightly-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -2839,7 +2746,6 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
   nightly-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read

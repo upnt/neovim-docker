@@ -1,5 +1,4 @@
   {version_str}:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,7 +28,6 @@
           labels: ${{{{ steps.meta.outputs.labels }}}}
 
   {version_str}-debug:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -59,7 +57,6 @@
           labels: ${{{{ steps.meta.outputs.labels }}}}
 
   {version_str}-release:
-    needs: login
     runs-on: ubuntu-latest
     permissions:
       contents: read
