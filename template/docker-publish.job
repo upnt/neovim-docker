@@ -16,18 +16,16 @@
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{{{ env.REGISTRY }}}}/${{{{ env.IMAGE_NAME }}}}
-          tags: |
-            type=semver, pattern={version}-{os}
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
-      - name: Build and push Docker image for debug
-        id: build-and-push-debug
+      - name: Build and push Docker image
+        id: build-and-push
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
         with:
           context: ./docker/{version}/{os}/Debug
           push: ${{{{ github.event_name != 'pull_request' }}}}
-          tags: ${{{{ steps.meta.outputs.tags }}}}
+          tags: ghcr.io/upnt/neovim-docker:{version}-{os}
           labels: ${{{{ steps.meta.outputs.labels }}}}
 
   {version_str}-debug:
@@ -48,8 +46,6 @@
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{{{ env.REGISTRY }}}}/${{{{ env.IMAGE_NAME }}}}
-          tags: |
-            type=semver, pattern={version}-{os}-debug
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
@@ -59,7 +55,7 @@
         with:
           context: ./docker/{version}/{os}/Debug
           push: ${{{{ github.event_name != 'pull_request' }}}}
-          tags: ${{{{ steps.meta.outputs.tags }}}}
+          tags: ghcr.io/upnt/neovim-docker:{version}-{os}-debug
           labels: ${{{{ steps.meta.outputs.labels }}}}
 
   {version_str}-release:
@@ -80,16 +76,14 @@
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
           images: ${{{{ env.REGISTRY }}}}/${{{{ env.IMAGE_NAME }}}}
-          tags: |
-            type=semver, pattern={version}-{os}-release
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
-      - name: Build and push Docker image for debug
-        id: build-and-push-debug
+      - name: Build and push Docker image for release
+        id: build-and-push-release
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
         with:
-          context: ./docker/{version}/{os}/Debug
+          context: ./docker/{version}/{os}/Release
           push: ${{{{ github.event_name != 'pull_request' }}}}
-          tags: ${{{{ steps.meta.outputs.tags }}}}
+          tags: ghcr.io/upnt/neovim-docker:{version}-{os}-release
           labels: ${{{{ steps.meta.outputs.labels }}}}
