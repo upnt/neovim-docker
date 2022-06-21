@@ -50,6 +50,14 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
   v0.1.0:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -121,6 +129,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.1.1:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -192,6 +208,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.1.2:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -263,6 +287,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.1.3:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -334,6 +366,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.1.4:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -405,6 +445,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.1.5:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -476,6 +524,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.1.6:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -547,6 +603,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.1.7:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -618,6 +682,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.2.0:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -689,6 +761,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.2.1:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -760,6 +840,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.2.2:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -831,6 +919,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.0:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -902,6 +998,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.1:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -973,6 +1077,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.2:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1044,6 +1156,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.3:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1115,6 +1235,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.4:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1186,6 +1314,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.5:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1257,6 +1393,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.6:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1328,6 +1472,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.7:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1399,6 +1551,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.3.8:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1470,6 +1630,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.4.0:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1541,6 +1709,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.4.1:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1612,6 +1788,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.4.2:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1683,6 +1867,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.4.3:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1754,6 +1946,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.4.4:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1825,6 +2025,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.5.0:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1896,6 +2104,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.5.1:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -1967,6 +2183,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.6.0:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -2038,6 +2262,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.6.1:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -2109,6 +2341,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   v0.7.0:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -2180,6 +2420,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   stable:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -2251,6 +2499,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
   nightly:
     needs: login
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      # This is used to complete the identity challenge
+      # with sigstore/fulcio when running outside of PRs.
+      id-token: write
+
     steps:
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
