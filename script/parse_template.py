@@ -65,13 +65,9 @@ if __name__=='__main__':
     
     version_dict = {
             0: {
-                1: range(8),
-                2: range(3),
-                3: range(9),
-                4: range(5),
                 5: range(2),
                 6: range(2),
-                7: range(1)
+                7: range(3)
             },
             'stable': {
             },
